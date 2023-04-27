@@ -11,8 +11,8 @@ type Config struct {
 	Url string
 }
 
-func (c *Config) Init() {
-	err := godotenv.Load(".env")
+func (c *Config) Init(configFile string) {
+	err := godotenv.Load(configFile)
 	if err != nil {
 		log.Println("Error loading from .env file, procceed...")
 	}
