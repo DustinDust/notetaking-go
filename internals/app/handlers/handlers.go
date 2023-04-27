@@ -6,10 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Handler struct {
+type Handlers struct {
 }
 
-func (h *Handler) Ping(c *gin.Context) {
+func (h *Handlers) Ping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"ping": "pong",
 	})

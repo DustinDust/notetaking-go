@@ -1,6 +1,6 @@
 package models
 
-var schema = `
+var userSchema = `
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
 	user_id    INTEGER PRIMARY KEY,
@@ -12,7 +12,7 @@ CREATE TABLE user (
 `
 
 func (m *Models) Seeds() {
-	m.db.MustExec(schema)
+	m.db.MustExec(userSchema)
 	tx := m.db.MustBegin()
 	tx.MustExec("INSERT INTO user (first_name, last_name, email) VALUES ($1, $2, $3)", "Nam", "Dang", "dangnamshuy@gmail.com")
 	tx.Commit()
